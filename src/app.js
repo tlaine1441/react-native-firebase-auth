@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, } from 'react-native';
 import firebase from 'firebase';
-import { Header, Button, CardSection, Spinner } from './components/common';
+import { Button, CardSection, Spinner } from './components/common';
 import LoginForm from './components/LoginForm';
 
 class App extends Component {
@@ -48,7 +48,6 @@ class App extends Component {
   render() {
     return (
       <View>
-        <Header headerText="Bottom Bitches Know" />
         {this.renderContent()}
       </View>
     );
