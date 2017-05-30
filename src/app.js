@@ -3,17 +3,18 @@ import { View, } from 'react-native';
 import firebase from 'firebase';
 import { Button, CardSection, Spinner } from './components/common';
 import LoginForm from './components/LoginForm';
+import Home from './components/Home';
 
 class App extends Component {
   state = { loggedIn: null }
 
   componentWillMount() {
     firebase.initializeApp({
-          apiKey: 'AIzaSyBKLgzxUwjH5N0HITy0b1mCyVT9fYh7f-c',
-          authDomain: 'authentication-436c4.firebaseapp.com',
-          databaseURL: 'https://authentication-436c4.firebaseio.com',
-          storageBucket: 'authentication-436c4.appspot.com',
-          messagingSenderId: '277719933753'
+          apiKey: "AIzaSyA9W-y3LEHDnkWyGZ_ynmnWkLS2XiD0t9I",
+          authDomain: "obsidian-a9f75.firebaseapp.com",
+          databaseURL: "https://obsidian-a9f75.firebaseio.com", 
+          storageBucket: "obsidian-a9f75.appspot.com",
+          messagingSenderId: "38380095952"
     });
 
     firebase.auth().onAuthStateChanged((user) => {
@@ -29,11 +30,7 @@ class App extends Component {
     switch (this.state.loggedIn) {
       case true:
       return (
-        <CardSection>
-          <Button onPress={() => firebase.auth().signOut()}>
-            Log Out
-          </Button>
-        </CardSection>
+        <Home />
       );
       case false:
         return <LoginForm />;
